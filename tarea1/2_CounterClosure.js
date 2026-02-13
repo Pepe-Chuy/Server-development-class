@@ -1,5 +1,5 @@
 function createCounter() {
-    // Privado
+    // Privado, metodos para sumar, restar o settear a 0
     let total = 0;
     
     return {
