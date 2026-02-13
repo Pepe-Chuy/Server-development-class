@@ -25,7 +25,7 @@ function createCounter() {
 
 
 
-
+///// USE
 const contador = crearContador();
 
 contador.incrementar();

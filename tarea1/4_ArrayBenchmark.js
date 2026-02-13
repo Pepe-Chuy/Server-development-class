@@ -41,7 +41,7 @@ function execBenchmark(size){
 
     let forTime = performance.now() - start;
 
-    // validamos
+    // validations
     console.log("Resultados:");
     console.log(`filter + map = ${filterMapTime.toFixed(3)} ms`);
     console.log(`reduce       = ${reduceTime.toFixed(3)} ms`);
@@ -50,7 +50,7 @@ function execBenchmark(size){
 
 
 
-///// USO
+///// USE
 
 execBenchmark(10_000);
 execBenchmark(100_000);

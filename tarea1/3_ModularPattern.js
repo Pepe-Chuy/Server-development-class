@@ -1,9 +1,9 @@
 
-// Usamos IIFE/Funcion autoejecutable para el logger
+// We use autoexec (IIFE) to create a private scope
 const Logger = (function (){
     // Privado
 
-    //niveles de prioridad para los logs
+    //priority level for the logs
     const levels = {
         error: 0,
         warn: 1,
@@ -11,7 +11,7 @@ const Logger = (function (){
     };
 
 
-    let currentLvl = levels.info; //nivel, default: info
+    let currentLvl = levels.info; //level, default: info
     let outputMode = "console"; 
     let logFilePath = "./app.log";
 
@@ -28,13 +28,12 @@ const Logger = (function (){
     }
 
     function writeToFile(level, message){
-        // Mensaje con fecha en ISO
         const logMessage = `[${new Date().toISOString()}] [${level.toUpperCase()}] ${message}\n`;
         fs.appendFileSync(logFilePath, logMessage);
 
     }
 
-    // Handler o funcion main para registrar los logs
+    // Handler to log registry
     function log(level, message){
         if (!shouldLog(level)) return;
 
@@ -45,8 +44,7 @@ const Logger = (function (){
     }
   }
 
-
-  // Público, API para registrar los 3 tipos o cambiar el nivel
+  //Public, API to register the 3 types or change the level
   return {
     info(message) {
       log("info", message);
@@ -75,9 +73,9 @@ const Logger = (function (){
 
 
 
-///// USO
+///// USE
 
-Logger.setLevel("warn"); // Solo warn y error
+Logger.setLevel("warn"); // Only warn and error
 Logger.setOutput("console");
 
 Logger.info("Info q no se enseña");
