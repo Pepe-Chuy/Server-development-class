@@ -18,7 +18,7 @@ function execBenchmark(size){
     let filterMapTime = performance.now() - start;
 
     // reduce
-    let start = performance.now();   
+    start = performance.now();   
     
     const result2 = data.reduce((acc, n) => {
     if (n % 2 === 0) {
@@ -26,12 +26,11 @@ function execBenchmark(size){
     }
     return acc;
     }, []);
-    console.timeEnd("reduce");
 
     let reduceTime = performance.now() - start;
 
     // for loop
-    let start = performance.now();
+    start = performance.now();
     
     const result3 = [];
     for (let i = 0; i < data.length; i++) {
@@ -39,8 +38,7 @@ function execBenchmark(size){
         result3.push(data[i] * 2);
         }
     }
-    console.timeEnd("for loop");
-    
+
     let forTime = performance.now() - start;
 
     // validamos
