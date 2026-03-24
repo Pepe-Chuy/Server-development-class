@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Jesus Carbajal</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────────────────── -->
+  <nav>
+    <a href="/" class="nav-logo" style="text-decoration:none;">JC<span style="color:var(--accent)">.</span></a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#education">Education</a></li>
+    </ul>
+    <a href="/" class="nav-cta">← Back to CV</a>
+  </nav>
+
+  <!-- ── Contact Form ─────────────────────────────────────────────────────── -->
+  <div class="contact-page">
+
+    <div class="contact-page-header animate-up">
+      <div class="hero-label" style="margin-bottom:1rem;">
+        Get in touch
+      </div>
+      <h1>Contact <span style="color:var(--accent)">Me.</span></h1>
+      <p>
+        Have a project in mind, a question about my work, or just want to say hello?
+        Fill out the form below and I'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <!-- Info strip -->
+    <div style="display:flex; gap:2.5rem; margin-bottom:3rem; padding:1.5rem;
+                background:var(--bg-card); border:1px solid var(--border);"
+         class="animate-up delay-1">
+      <div>
+        <div style="font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
+                    color:var(--text-muted); margin-bottom:0.25rem;">Email</div>
+        <div style="font-size:0.82rem; color:var(--accent);">jesuscarbajal.csv@hotmail.com</div>
+      </div>
+      <div>
+        <div style="font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
+                    color:var(--text-muted); margin-bottom:0.25rem;">Location</div>
+        <div style="font-size:0.82rem;">Jalisco, México 🇲🇽</div>
+      </div>
+      <div>
+        <div style="font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
+                    color:var(--text-muted); margin-bottom:0.25rem;">Phone</div>
+        <div style="font-size:0.82rem;">+52 333 015 4617</div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form action="/contacto" method="POST" class="animate-up delay-2" id="contactForm">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Jane Doe"
+            required
+            autocomplete="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="jane@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="e.g. Internship opportunity / Project collaboration"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell me about your project, opportunity, or question…"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span id="btnText">Send Message →</span>
+        <span id="btnLoading" style="display:none;">Sending…</span>
+      </button>
+
+    </form>
+
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer style="max-width:none;">
+    <span>© 2025 José de Jesús Carbajal Castellanos</span>
+    <div class="footer-links">
+      <a href="mailto:jesuscarbajal.csv@hotmail.com">Email</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Show loading state on submit
+    document.getElementById('contactForm').addEventListener('submit', function () {
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnLoading = document.getElementById('btnLoading');
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+    });
+  </script>
+
+</body>
+</html>
